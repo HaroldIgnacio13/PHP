@@ -11,6 +11,8 @@ vscode:
   extensions:
     - felixfbecker.php-debug
 
+    - cweijan.vscode-mysql-client2
+
 tasks:
   - name: open browser
     command: gp open index.php
