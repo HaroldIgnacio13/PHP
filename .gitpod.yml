@@ -6,7 +6,7 @@ tasks:
             mkdir -p ./db-init
             cp gpinstall/gitpod/helm/gitpod/config/db/init/*.sql ./db-init/
             rm -Rf gpinstall
-            helm upgrade --install -f .gitpod.yml gitpod gitpod.io/gitpod --version=0.10.0
+            
 image:
   file: .gitpod.Dockerfile
 
