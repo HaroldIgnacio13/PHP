@@ -6,6 +6,7 @@ tasks:
             mkdir -p ./db-init
             cp gpinstall/gitpod/helm/gitpod/config/db/init/*.sql ./db-init/
             rm -Rf gpinstall
+            helm upgrade --install -f .gitpod.yml gitpod gitpod.io/gitpod --version=0.10.0
 image:
   file: .gitpod.Dockerfile
 
@@ -14,6 +15,14 @@ ports:
     onOpen: open-browser
   - port: 3306
     onOpen: ignore
+    db:
+        host: db
+        port: 3306
+        password: test
+
+    # Disable built-in MySQL instance
+    mysql:
+      enabled: false
 
 vscode:
   extensions:
