@@ -6,6 +6,7 @@ tasks:
             mkdir -p ./db-init
             cp gpinstall/gitpod/helm/gitpod/config/db/init/*.sql ./db-init/
             rm -Rf gpinstall
+            npm run dev
             
 image:
   file: .gitpod.Dockerfile
