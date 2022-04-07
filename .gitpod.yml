@@ -15,14 +15,6 @@ ports:
     onOpen: open-browser
   - port: 3306
     onOpen: ignore
-    db:
-        host: db
-        port: 3306
-        password: test
-
-    # Disable built-in MySQL instance
-    mysql:
-      enabled: false
 
 vscode:
   extensions:
