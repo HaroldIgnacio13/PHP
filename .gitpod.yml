@@ -1,3 +1,11 @@
+tasks:
+  - name: open browser
+    command: |
+            mkdir -p gpinstall
+            echo exit | docker run -v $PWD/gpinstall:/workspace -u $(id -u) -i gcr.io/gitpod-io/self-hosted/installer:latest bash
+            mkdir -p ./db-init
+            cp gpinstall/gitpod/helm/gitpod/config/db/init/*.sql ./db-init/
+            rm -Rf gpinstall
 image:
   file: .gitpod.Dockerfile
 
@@ -10,9 +18,6 @@ ports:
 vscode:
   extensions:
     - felixfbecker.php-debug
-
     - cweijan.vscode-mysql-client2
 
-tasks:
-  - name: open browser
-    command: gp open index.php
+
